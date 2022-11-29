@@ -20,6 +20,7 @@ export class AllExceptionsFilter extends BaseExceptionFilter {
         : HttpStatus.INTERNAL_SERVER_ERROR;
 
     if (status >= 500) {
+      console.error(exception);
       response.status(status).json({
         statusCode: status,
         timestamp: new Date().toISOString(),
